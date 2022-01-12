@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Comforter+Brush&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --header1: calc(1.5rem + 1vw);
+    --header2: calc(3rem + 1vw);
+    --header3: calc(2.5rem + 1vw);
+    --header4: calc(1.8rem + 1vw);
+    --text: calc(1rem + 1vw);
+    --big: calc(1.9rem + 1vw);
+    --special-color: #906272;
+    --main-color: #414141;
+    --grey-text: #525252;
+    --ff-lato: "Lato", sans-serif;
+    --ff-ComforterBrush: "Comforter Brush", sans-serif;
+    --ff-Ruhl: "Frank Ruhl Libre", sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+h1 {
+    font-size: var(--header1);
+    font-family: var(--ff-ComforterBrush);
+}
+
+li,
+button,
+label,
+input,
+a,
+p {
+    font-size: var(--text);
+}
+
+h2 {
+    font-size: var(--header2);
+}
+
+h3 {
+    font-size: var(--header3);
+}
+
+h4,
+h5 {
+    font-size: var(--header4);
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+body {
+    font-family: var(--ff-Ruhl);
+    animation: opening 1s ease-in-out;
+}
+
+
+/* Navigation */
+
+.main-head {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    position: relative;
+}
+
+nav {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    min-height: 10vh;
+    padding: 2rem 0;
+}
+
+#logo {
+    flex: 1 1 20rem;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    flex: 1 1 20rem;
+}
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    flex-wrap: wrap;
+    width: 95%;
+    margin: 0 0 0 auto;
+    overflow: hidden;
+}
+
+.hero-introduction {
+    flex: 2 1 40rem;
+    text-align: center;
+}
+
+.hero-introduction p {
+    padding: 5rem 10rem;
+}
+
+.hero-introduction h2 {
+    padding-top: 3rem;
+}
+
+.hero-introduction a {
+    padding: 2rem 8rem;
+    border: 3px solid #000;
+    margin-bottom: 4rem;
+}
+
+.hero-images {
+    flex: 1 1 40rem;
+    background: linear-gradient(#dad8dd, #dad1d4);
+    position: relative;
+    z-index: 1;
+}
+
+.hero-elena {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.plant {
+    position: absolute;
+    bottom: 0;
+    left: -20%;
+    z-index: -1;
+    transform: translateY(10%) rotateZ(-10deg) rotateX(90deg);
+    animation: plant-entrance 1.5s ease-in-out 0.5s forwards, plant-shake 2.5s infinite ease-in-out alternate-reverse 1.9s;
+    transform-origin: bottom;
+}
+
+.plant2 {
+    left: 40%;
+}
+
+
+/* Animations */
+
+@keyframes opening {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes plant-entrance {
+    from {
+        transform: translateY(10%) rotateZ(-10deg) rotateX(90deg);
+    }
+    to {
+        transform: translateY(0) rotateZ(0) rotateX(0);
+    }
+}
+
+@keyframes plant-shake {
+    from {
+        transform: rotateZ(-5deg);
+    }
+    to {
+        transform: rotateZ(0);
+    }
+}
