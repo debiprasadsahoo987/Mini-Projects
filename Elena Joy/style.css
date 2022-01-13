@@ -155,6 +155,27 @@ nav {
     left: 40%;
 }
 
+.menu {
+    border: none;
+    background: none;
+    visibility: hidden;
+}
+
+.menu-icon {
+    height: 4rem;
+    cursor: pointer;
+}
+
+.body-closed {
+    overflow: hidden;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
 
 /* Animations */
 
@@ -183,4 +204,31 @@ nav {
     to {
         transform: rotateZ(0);
     }
+}
+
+@media (max-width: 842px) {
+    .menu {
+        visibility: visible;
+    }
+    .nav-links a {
+        color: #fff;
+        font-size: var(--header3);
+    }
+    .nav-links {
+        position: absolute;
+        background: var(--special-color);
+        width: 60%;
+        height: 100vh;
+        position: fixed;
+        top: 10vh;
+        left: 40%;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+}
+
+.nav-active {
+    transform: translateX(0);
 }
